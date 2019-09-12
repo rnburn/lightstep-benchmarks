@@ -107,11 +107,11 @@ def generate_spans(tracer, units_work, number_spans, scope=None):
                 db_scope.span.log_kv({
                     'event': 'error',
                     'stack': """File \"example.py\", line 7, in <module>
-                                caller()
-                                File \"example.py\", line 5, in caller
-                                callee()
-                                File \"example.py\", line 2, in callee
-                                raise Exception(\"Yikes\")"""})
+caller()
+File \"example.py\", line 5, in caller
+callee()
+File \"example.py\", line 2, in callee
+raise Exception(\"Yikes\")"""})
 
                 do_work(units_work)
                 number_spans -= 1
